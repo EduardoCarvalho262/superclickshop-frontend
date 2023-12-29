@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Product } from 'src/app/model/Product';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,4 +9,24 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
+  products: Product[] = [];
+
+    constructor(private productService: ProductsService){}
+
+    ngOnInit(): void {
+      this.loadProducts();
+    }
+
+
+    loadProducts(): void {
+      this.productService.getProducts()
+        .subscribe({
+           next: (res) => {
+            this.products = res;
+           },
+           error: (erro) =>{
+            console.error(`Erro: ${erro}`);
+           }
+        })
+    }
 }
