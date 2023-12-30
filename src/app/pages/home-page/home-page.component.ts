@@ -23,6 +23,7 @@ export class HomePageComponent {
         .subscribe({
            next: (res) => {
             this.products = res;
+            console.log(this.products);
            },
            error: (erro) =>{
             console.error(`Erro: ${erro}`);
