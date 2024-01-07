@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './common/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { CreateAccountComponent } from './pages/login/create-account/create-account.component';
+import { ForgetPasswordComponent } from './pages/login/forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomePageComponent,
     FooterComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    CreateAccountComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,
